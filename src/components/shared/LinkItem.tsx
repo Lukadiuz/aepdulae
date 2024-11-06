@@ -1,6 +1,7 @@
 import React from "react";
 import { LinkType } from "../../store/mockData";
 import { IconType } from "react-icons";
+import { NavLink } from "react-router-dom";
 
 interface LinkItemProps extends LinkType {
   href: string;
@@ -17,9 +18,9 @@ const LinkItem: React.FC<LinkItemProps> = ({
 }) => {
   return (
     <li>
-      <a
-        href={href}
-        className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+      <NavLink
+        to={href}
+        className="aria-[current=page]:bg-sky-700 aria-[current=page]:text-white flex items-center p-2 text-slate-600 rounded-lg hover:text-white hover:bg-sky-700 dark:text-white  dark:hover:bg-sky-700"
       >
         <Icon className="mr-3" />
         <span className="flex-1 me-3">{text}</span>
@@ -30,7 +31,7 @@ const LinkItem: React.FC<LinkItemProps> = ({
             {badge[`text`]}
           </span>
         )} */}
-      </a>
+      </NavLink>
     </li>
   );
 };

@@ -9,47 +9,47 @@ export interface LinkType {
 
 export const links: LinkType[] = [
     {
-        href: '#',
+        href: '/',
         icon: FaChartBar,
         text: 'Dashboard'
     },
     {
-        href: '#',
+        href: '/work-orders',
         icon: FaListUl,
         text: 'Work Orders'
     },
     {
-        href: '#',
+        href: '/booking',
         icon: FaRegCalendarCheck,
         text: 'Booking'
     },
     {
-        href: '#',
+        href: '/bringers',
         icon: FaUserTie,
         text: 'Bringers'
     },
     {
-        href: '#',
+        href: '/users',
         icon: FaUsers,
         text: 'Users'
     },
     {
-        href: '#',
+        href: '/news',
         icon: FaRegNewspaper,
         text: 'News'
     },
     {
-        href: '#',
+        href: '/promotion',
         icon: FaTags,
         text: 'Promotion'
     },
     {
-        href: '#',
+        href: '/checklist',
         icon: FaCheckDouble,
         text: 'Checklist Template'
     },
     {
-        href: '#',
+        href: '/setting',
         icon: FaCog,
         text: 'Setting'
     }

@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import Header from "./components/shared/Header";
+import Sidebar from "./components/shared/Sidebar";
+import Main from "./pages/Main";
+import Content from "./pages/Content";
+import { Outlet } from "react-router-dom";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC<{}> = () => {
+  const [darkMode, setDarkMode] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  const toggleDarkMode = () => {
+    setDarkMode(!darkMode);
+  };
+
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
 
   return (
-    <>
-      <div className='flex flex-row justify-center'>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div className={`${darkMode && "dark"}`}>
+      <Header
+        toggleSidebar={toggleSidebar}
+        toggleDarkMode={toggleDarkMode}
+        darkMode={darkMode}
+      />
+      <Sidebar isSidebarOpen={isSidebarOpen} />
+      <Main>
+        <Content>
+          <Outlet />
+        </Content>
+      </Main>
+    </div>
+  );
+};
 
-export default App
+export default App;
