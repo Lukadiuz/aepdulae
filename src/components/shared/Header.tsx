@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({
           </div>
           <button
             onClick={toggleDarkMode}
-            className="dark:bg-slate-50 dark:text-slate-700 rounded-full p-2"
+            className="bg-neutral-200 dark:text-slate-700 rounded-full p-2"
           >
             {darkMode ? <FaSun /> : <FaMoon />}
           </button>

@@ -2,6 +2,7 @@ import React from "react";
 import { links } from "../../store/mockData";
 import LinkItem from "./LinkItem";
 import { Avatar, Button } from "antd";
+import Buttons from "../button/Buttons";
 
 interface SidebarProps {
   isSidebarOpen: boolean;
@@ -26,9 +27,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen }) => {
           <span>ADMIN</span>
         </span>
         <div className="w-full flex justify-center">
-          <Button className="text-lg w-40" danger>
+          {/* <Button className=" w-40 text-slate-600 text-lg font-bold bg-zinc-300">
             Logout
-          </Button>
+          </Button> */}
+          <Buttons />
         </div>
       </div>
     </aside>

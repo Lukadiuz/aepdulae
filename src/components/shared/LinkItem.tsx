@@ -20,7 +20,7 @@ const LinkItem: React.FC<LinkItemProps> = ({
     <li>
       <NavLink
         to={href}
-        className="aria-[current=page]:bg-sky-700 aria-[current=page]:text-white flex items-center p-2 text-slate-600 rounded-lg hover:text-white hover:bg-sky-700 dark:text-white  dark:hover:bg-sky-700"
+        className="aria-[current=page]:bg-sky-700 aria-[current=page]:text-white flex items-center p-2 text-slate-600 rounded-lg hover:text-white hover:bg-sky-600 dark:text-white  dark:hover:bg-sky-600"
       >
         <Icon className="mr-3" />
         <span className="flex-1 me-3">{text}</span>

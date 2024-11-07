@@ -8,7 +8,11 @@ export default {
     extend: {
       fontFamily:{
         quickSand:["Quicksand", 'serif']
-      }
+      },
+      colors: {
+        'main': '#55567e',
+        'sub': '#cacad4',
+      },
     },
   },
   plugins: [],
