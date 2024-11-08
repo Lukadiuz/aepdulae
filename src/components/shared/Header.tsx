@@ -1,8 +1,6 @@
 import React from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import reactLogo from "../../assets/react.svg";
-
 interface HeaderProps {
   darkMode: boolean;
   toggleSidebar: () => void;
@@ -25,7 +23,11 @@ const Header: React.FC<HeaderProps> = ({
             >
               <HiOutlineMenuAlt2 className="text-2xl" />
             </button>
-            <img src={reactLogo} className="logo react" alt="React logo" />
+            <img
+              src="https://www.aepdulae.com/images/logo.jpg"
+              className="w-14"
+              alt="Logo"
+            />
             {/* <a href="#" className="flex ms-2 md:me-24">
               <FaDev className="h-8 me-3 text-2xl text-amber-400" />
               <span className="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white">

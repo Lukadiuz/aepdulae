@@ -3,12 +3,19 @@ import { links } from "../../store/mockData";
 import LinkItem from "./LinkItem";
 import { Avatar, Button } from "antd";
 import Buttons from "../button/Buttons";
+import { useNavigate } from "react-router-dom";
 
 interface SidebarProps {
   isSidebarOpen: boolean;
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen }) => {
+  let navigate = useNavigate();
+  const onLogout = () => {
+    localStorage.removeItem("user");
+    return navigate("/login");
+  };
+
   return (
     <aside
       className={`transition-all-elements fixed top-0 left-0 z-40 w-64 h-screen pt-20 bg-zinc-200 border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 transition-transform ${
@@ -30,7 +37,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen }) => {
           {/* <Button className=" w-40 text-slate-600 text-lg font-bold bg-zinc-300">
             Logout
           </Button> */}
-          <Buttons />
+          <Buttons onClick={onLogout} />
         </div>
       </div>
     </aside>
