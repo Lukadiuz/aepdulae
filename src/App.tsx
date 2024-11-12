@@ -37,11 +37,13 @@ const App: React.FC<{}> = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  if (isLoading) {
+    return <></>;
+  }
+
   return (
     <div className={`${darkMode && "dark"}`}>
-      {isLoading ? (
-        <></>
-      ) : (
+      {
         <>
           <Header
             toggleSidebar={toggleSidebar}
@@ -55,7 +57,7 @@ const App: React.FC<{}> = () => {
             </Content>
           </Main>
         </>
-      )}
+      }
     </div>
   );
 };

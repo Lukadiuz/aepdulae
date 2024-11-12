@@ -10,6 +10,8 @@ import News from "../pages/news/News.tsx";
 import Promotion from "../pages/promotion/Promotion.tsx";
 import Login from "../pages/login/login.tsx";
 import Booking from "../pages/booking/Booking.tsx";
+import WorkOrdersCreate from "../pages/workOrders/WorkOrdersCreate.tsx";
+import WorkOrdersDetail from "../pages/workOrders/WorkOrdersDetail.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ export const router = createBrowserRouter([
       {
         path: "/work-orders",
         element: <WorkOrders />,
+      },
+      {
+        path: "/work-orders/create",
+        element: <WorkOrdersCreate />,
+      },
+      {
+        path: "/work-orders/detail/:id",
+        element: <WorkOrdersDetail />,
       },
       {
         path: "/booking",
