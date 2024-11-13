@@ -12,6 +12,9 @@ import Login from "../pages/login/login.tsx";
 import Booking from "../pages/booking/Booking.tsx";
 import WorkOrdersCreate from "../pages/workOrders/WorkOrdersCreate.tsx";
 import WorkOrdersDetail from "../pages/workOrders/WorkOrdersDetail.tsx";
+import BookingDetail from "../pages/booking/BookingDetail.tsx";
+import BringersDetail from "../pages/bringers/BringersDetail.tsx";
+import UsersDetail from "../pages/users/UsersDetail.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -40,12 +43,24 @@ export const router = createBrowserRouter([
         element: <Booking />,
       },
       {
+        path: "/booking/detail/:id",
+        element: <BookingDetail />,
+      },
+      {
         path: "/bringers",
         element: <Bringers />,
       },
       {
+        path: "/bringers/detail/:id",
+        element: <BringersDetail />,
+      },
+      {
         path: "/users",
         element: <Users />,
+      },
+      {
+        path: "/users/detail/:id",
+        element: <UsersDetail />,
       },
       {
         path: "/news",

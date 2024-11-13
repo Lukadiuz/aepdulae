@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root{
+:root {
   font-family: quickSand;
 }
 
-.transition-all-elements{
+.transition-all-elements {
   @apply transition-colors duration-500;
 }
