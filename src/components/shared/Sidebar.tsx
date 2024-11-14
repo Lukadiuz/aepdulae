@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { links } from "../../store/mockData";
 import LinkItem from "./LinkItem";
 import { Avatar, Button } from "antd";
@@ -7,17 +7,41 @@ import { useNavigate } from "react-router-dom";
 
 interface SidebarProps {
   isSidebarOpen: boolean;
+  setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen }) => {
+const Sidebar: React.FC<SidebarProps> = ({
+  isSidebarOpen,
+  setIsSidebarOpen,
+}) => {
   let navigate = useNavigate();
+  const sidebarRef = useRef<HTMLDivElement>(null);
   const onLogout = () => {
     localStorage.removeItem("user");
     return navigate("/login");
   };
 
+  // Handle click outside sidebar to close it
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target as Node)
+      ) {
+        setIsSidebarOpen(false); // Close sidebar if click is outside
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside); // Attach the event listener
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside); // Cleanup event listener on component unmount
+    };
+  }, [setIsSidebarOpen]);
+
   return (
     <aside
+      ref={sidebarRef}
       className={`transition-all-elements fixed top-0 left-0 z-40 w-64 h-screen pt-20 bg-zinc-200 border-r border-gray-200 sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700 transition-transform ${
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`}

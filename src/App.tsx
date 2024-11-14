@@ -50,7 +50,10 @@ const App: React.FC<{}> = () => {
             toggleDarkMode={toggleDarkMode}
             darkMode={darkMode}
           />
-          <Sidebar isSidebarOpen={isSidebarOpen} />
+          <Sidebar
+            isSidebarOpen={isSidebarOpen}
+            setIsSidebarOpen={setIsSidebarOpen}
+          />
           <Main>
             <Content>
               <Outlet />

@@ -10,3 +10,11 @@
 .transition-all-elements {
   @apply transition-colors duration-500;
 }
+
+@media (max-width: 639px) {
+  .ant-picker-panels {
+    flex-direction: column;
+    overflow-y: scroll;
+    height: 300px;
+  }
+}
