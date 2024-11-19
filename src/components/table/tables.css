@@ -1,0 +1,23 @@
+/* .table-row-light {
+    background-color: #ffffff;
+}
+.table-row-dark {
+    background-color: #efeff3;
+} */
+
+.ant-table-row-selected > .ant-table-cell {
+  background-color: #efeff3 !important;
+}
+
+.ant-checkbox-wrapper .ant-checkbox {
+  border-color: #959595;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #55567e !important;
+  border-color: #325b7e !important;
+}
+
+.ant-checkbox-inner::after {
+  border-color: #fff;
+}

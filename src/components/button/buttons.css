@@ -1,0 +1,10 @@
+.btn {
+  background: theme("colors.sub");
+  font-weight: 700;
+  color: theme("colors.main");
+  font-size: large;
+}
+
+.btn:hover {
+  background: theme("colors.sub") !important;
+}
