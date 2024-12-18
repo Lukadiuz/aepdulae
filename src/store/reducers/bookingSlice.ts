@@ -24,6 +24,10 @@ const BookingSlice = createSlice({
     addBooking: (state, action: PayloadAction<Booking>) => {
       state.data.push(action.payload);
     },
+    deleteBooking: (state, action: PayloadAction<{}>) => {
+      // .filter((e) => e.id != action.payload);
+      state.data.pop();
+    },
   },
   extraReducers: (builder) => {
     createAsyncReducer(builder, fetchBooking);
@@ -60,5 +64,7 @@ const createAsyncReducer = <
       state.error = action.error.message || "Something went wrong";
     });
 };
+
+export const { addBooking, deleteBooking } = BookingSlice.actions;
 
 export default BookingSlice.reducer;

@@ -4,6 +4,7 @@ import WrapperContent from "../../components/shared/WrapperContent";
 import CardChart from "../../components/charts/CardChart";
 import { FaListUl, FaRegCalendarCheck } from "react-icons/fa";
 import { Col, Row } from "antd";
+import ButtonComponent from "../../components/buttons/Buttons";
 
 interface DashboardProps {}
 
@@ -51,6 +52,12 @@ const Dashboard: React.FC<DashboardProps> = ({}) => {
             />
           </Col>
         </Row>
+        <div className="flex flex-row m-2 gap-2">
+          <ButtonComponent type="theme">Login</ButtonComponent>
+          <ButtonComponent type="general">Create Work Order</ButtonComponent>
+          <ButtonComponent type="primary">Submit</ButtonComponent>
+          <ButtonComponent type="danger">Cancel</ButtonComponent>
+        </div>
       </WrapperContent>
     </Wrapper>
   );

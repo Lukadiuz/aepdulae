@@ -1,6 +1,7 @@
 import React from "react";
 import { Form, Input, Button, Typography } from "antd";
 import { useNavigate } from "react-router-dom";
+import Buttons from "../../components/buttons/Buttons";
 
 interface LoginProps {}
 const { Title } = Typography;
@@ -58,13 +59,9 @@ const Login: React.FC<LoginProps> = ({}) => {
                 <Input.Password placeholder="Password" className="rounded-lg" />
               </Form.Item>
               <Form.Item>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  className="w-full rounded-lg"
-                >
+                <Buttons type="theme" htmlType="submit">
                   Login
-                </Button>
+                </Buttons>
               </Form.Item>
             </Form>
           </div>

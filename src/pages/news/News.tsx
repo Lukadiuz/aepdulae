@@ -139,10 +139,7 @@ const News: React.FC = () => {
         <div className="flex flex-col gap-3 p-5">
           <div className="flex flex-row gap-3">
             <div>
-              <Image
-                width={150}
-                src="https://rickandmortyapi.com/api/character/avatar/2.jpeg"
-              />
+              <Image width={150} src={photo} />
             </div>
 
             <div className="flex flex-col gap-3 w-full  justify-center">

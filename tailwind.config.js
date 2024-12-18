@@ -11,7 +11,11 @@ export default {
       },
       colors: {
         'main': '#55567e',
-        'sub': '#cacad4',
+        'sub': '#d4d4d4',
+        'btn-theme': '#0369a1',
+        'btn-general': '#55567e',
+        'btn-primary':'#3b82f6',
+        'btn-danger':'#ef4444',
       },
     },
   },
